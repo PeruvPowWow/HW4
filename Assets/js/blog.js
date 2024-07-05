@@ -13,4 +13,21 @@ const buildBLogPost = (post) => {
     const contentElement = document.createElement('p');
     contentElement.textContent = post.content;
 
-}
+    postElement.appendChild(titleElement);
+    postElement.appendChild(authorElement);
+    postElement.appendChild(contentElement);
+
+    main.appendChild(postElement);
+};
+
+const renderBlogPosts = () => {
+    const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+
+    if (blogPosts.length === 0) {
+        main.textContent = 'No Blog Posts Available';
+        return;
+    }
+
+    blogPosts.forEach(buildBLogPost);
+};
+
