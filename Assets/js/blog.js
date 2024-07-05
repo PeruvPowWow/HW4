@@ -1,9 +1,16 @@
-// TODO: Create a variable that selects the main element
+const main = document.getElementById('blogPosts');
 
-// TODO: Create a function that builds an element and appends it to the DOM
+const buildBLogPost = (post) => {
+    const postElement = document.createElement('div');
+    postElement.classList.add('blogPost');
 
-// TODO: Create a function that handles the case where there are no blog posts to display
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = post.title;
 
-// TODO: Create a function that reads from local storage and returns the data
+    const authorElement = document.createElement('p');
+    authorElement.textContent = `by ${post.username}`;
 
-// TODO: Call the function to render the list of blog posts
+    const contentElement = document.createElement('p');
+    contentElement.textContent = post.content;
+
+}
