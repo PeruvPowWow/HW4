@@ -13,7 +13,12 @@
     <script defer src="./assets/js/form.js" type="text/javascript"></script>
   </head>
 <body>
+  <header>
+    <h1>Welcome to My Blog</h1>
+  </header>
   <main>
+    <section>
+      <h2>What's on your mind?</h2>
     <form id="blogForm">
       <div>
         <label for="username">Username:</label>
@@ -27,9 +32,17 @@
         <label for="content">Content:</label>
         <textarea name="content" id="content"></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <div>
+        <input type="submit" value="Submit" />
+      </div>
     </form>
-    <p id="errorMessage" style="color: red;"> </p>
+    </section>
+    <aside>
+      <h2>My First Blog</h2>
+    </aside>
   </main>
+  <footer>
+    <p>&copy; 2024 My First Blog</p>
+  </footer>
 </body>
 </html>
