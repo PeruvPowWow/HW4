@@ -33,4 +33,4 @@ const redirectPage = function (url) {
   location.assign(url);
 };
 
-// TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
+

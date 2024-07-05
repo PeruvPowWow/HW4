@@ -31,3 +31,9 @@ const renderBlogPosts = () => {
     blogPosts.forEach(buildBLogPost);
 };
 
+document.getElementById('back').addEventListener('click', () => { 
+    redirectPage('index.html');
+});
+
+renderBlogPosts();
+
