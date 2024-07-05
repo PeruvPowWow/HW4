@@ -11,7 +11,21 @@ const handleFormSubmit = (event) => {
   const content = document.getElementByID('content').value;
   const errorMessage = document.getElementByID('errorMessage');
   
-}
+  if (!username || !title || !content) {
+    errorMessage.textContent = 'Please complete the form before submitting.';
+    return;
+  }
+
+  const blogPost = { username, title, content };
+  let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+  blogPosts.push(blogPost);
+  localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+
+  redirectPage('blog.html');
+};
+
+form.addEventListener('submit', handleFormSubmit);
+
 let redirectURL = '';
 
 const redirectPage = function (url) {
