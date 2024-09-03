@@ -1,3 +1,10 @@
+let redirectURL = '';
+
+const redirectPage = function (url) {
+  redirectURL = url;
+  location.assign(url);
+};
+
 const toggleButton = document.getElementById ('toggle');
 
 const applyMode = (mode) => {
@@ -15,5 +22,5 @@ toggleButton.addEventListener('click', toggleMode);
 
 document.addEventListener('DOMContentLoaded', () => {
     const mode = localStorage.getItem('mode') || 'light';
-    applyMode(savedMode);
+    applyMode(mode);
 });

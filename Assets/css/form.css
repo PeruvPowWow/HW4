@@ -6,11 +6,7 @@
   Tags
 */
 aside {
-  background: linear-gradient(
-    var(--light-accent), 
-    var(--circle-color), 
-    var(--dark-accent)
-  );
+  background: linear-gradient(var(--light-accent), var(--circle-color), var(--dark-accent));
   clip-path: circle(20rem at center);
   display: flex;
   justify-content: center;

@@ -1,8 +1,7 @@
 const main = document.getElementById('blogPosts');
 
 const buildBLogPost = (post) => {
-    const postElement = document.createElement('div');
-    postElement.classList.add('blogPost');
+    const postElement = document.createElement('article');
 
     const titleElement = document.createElement('h2');
     titleElement.textContent = post.title;
@@ -10,12 +9,16 @@ const buildBLogPost = (post) => {
     const authorElement = document.createElement('p');
     authorElement.textContent = `by ${post.username}`;
 
-    const contentElement = document.createElement('p');
+    const contentElement = document.createElement('blockquote');
     contentElement.textContent = post.content;
+
+    const dateElement = document.createElement('p');
+    dateElement.textContent = new Date(post.date).toLocaleDateString();
 
     postElement.appendChild(titleElement);
     postElement.appendChild(authorElement);
     postElement.appendChild(contentElement);
+    postElement.appendChild(dateElement);
 
     main.appendChild(postElement);
 };
@@ -36,4 +39,3 @@ document.getElementById('back').addEventListener('click', () => {
 });
 
 renderBlogPosts();
-
